@@ -6,9 +6,7 @@ import { withRouter } from 'react-router-dom';
 class SearchBar extends Component {
 
     handleFormSubmit = function({query}) { //allow us to access all our form attributes
-        console.log('trying to handle submit for query', query)
-        //navigate to a new route
-        this.props.history.push('/results');
+        this.props.onSubmit(query);
     }
 
     renderInput(field) {
