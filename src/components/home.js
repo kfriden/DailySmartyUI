@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Logo from './logo';
 import SearchBar from "./searchBar";
 import RecentPosts from "./recentPosts";
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class Home extends Component {
+class Home extends Component {
 
   handleSearchBarSubmit(query) { //allow us to access all our form attributes
-    console.log('trying to handle submit for query', query)
+    this.props.fetchPostsWithQuery(query);
     //navigate to a new route
     this.props.history.push('/results');
 }
@@ -23,3 +25,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default connect(null, actions)(Home);
