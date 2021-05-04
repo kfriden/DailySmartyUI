@@ -8,9 +8,11 @@ import * as actions from '../actions';
 class Home extends Component {
 
   handleSearchBarSubmit(query) { //allow us to access all our form attributes
-    this.props.fetchPostsWithQuery(query);
-    //navigate to a new route
-    this.props.history.push('/results');
+    this.props.fetchPostsWithQuery(query, () => {
+        //navigate to a new route
+        this.props.history.push('/results');
+    });
+    
 }
 
   render() {
