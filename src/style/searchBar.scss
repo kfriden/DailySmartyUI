@@ -1,4 +1,5 @@
 .search-bar {
+    display: grid;
 
     .searchbar-wrapper {
         display: grid;
@@ -33,4 +34,22 @@
         }
     } 
     
+}
+
+.search-bar_home {
+    align-content: center;
+    justify-items: center;
+    input {
+        height: 116px;
+        font-size: 40px;
+    }
+}
+
+.search-bar_results {
+    align-content: start;
+    justify-items: center;
+    input {
+        font-size: 22px;
+        height: 36px;
+    }
 }
